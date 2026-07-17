@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#153d73" />
+    <meta name="tka-apps-script-url" content="https://script.google.com/macros/s/AKfycbwmy0OGMr2pbmqhW6UQLi8jmGgzrykR_PeLReviqh5UW7a-EZ3n75oVsj9tSETCCPEGSQ/exec" />
+    <title>Pendaftaran TKA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero" aria-labelledby="judul">
+        <div class="brand">
+          <img class="school-logo" src="logo.png" alt="Logo sekolah" />
+          <div class="brand-text">
+            <span class="brand-kicker">PROGRAM INTENSIF</span>
+            <span class="brand-name">TKA</span>
+          </div>
+        </div>
+        <p class="eyebrow">PENDAFTARAN PESERTA INTENSIF TKA</p>
+        <h1 id="judul">Intensif<br />Tes Kemampuan Akademik</h1>
+        <p class="intro">Program pendampingan belajar dan pendaftaran Intensif TKA untuk siswa terpilih. Kegiatan ini gratis dan dirancang untuk membantu persiapan akademik secara lebih terarah.</p>
+        <div class="hero-art" aria-hidden="true">
+          <span class="spark spark-one">✦</span><span class="spark spark-two">✦</span>
+          <div class="book"><i></i><i></i><i></i></div>
+          <div class="pencil"></div>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="form-heading">
+          <p class="step">FORMULIR PENDAFTARAN</p>
+          <h2>Daftar program Intensif TKA</h2>
+          <p>Pastikan data yang kamu isi sudah benar sebelum dikirim. Form ini hanya untuk siswa yang terdaftar pada data sekolah.</p>
+        </div>
+
+        <form id="registration-form">
+          <label for="class">Kelas</label>
+          <select id="class" name="class" required>
+            <option value="">Pilih kelas</option>
+            <option value="9A">9A</option>
+            <option value="9B">9B</option>
+            <option value="9C">9C</option>
+            <option value="9D">9D</option>
+            <option value="9E">9E</option>
+          </select>
+
+          <label for="name">Nama lengkap</label>
+          <select id="name" name="name" required disabled>
+            <option value="">Pilih kelas dulu</option>
+          </select>
+
+          <label for="reason">Alasan mengikuti TKA</label>
+          <textarea id="reason" name="reason" rows="4" placeholder="Ceritakan singkat alasanmu..." required maxlength="500"></textarea>
+          <p class="count"><span id="char-count">0</span>/500 karakter</p>
+
+          <button class="submit-button" id="submit-button" type="submit">Kirim pendaftaran <span>→</span></button>
+        </form>
+
+      </section>
+    </main>
+
+    <dialog id="welcome-dialog" aria-label="Pendaftaran Intensif TKA">
+      <div class="welcome-backdrop" aria-hidden="true"></div>
+      <div class="welcome-stage">
+        <img class="welcome-logo" src="logo.png" alt="Logo sekolah" />
+        <h2 class="welcome-title">PENDAFTARAN INTENSIF TKA</h2>
+        <p class="welcome-label" id="welcome-label">TUTUP DALAM</p>
+        <div class="welcome-countdown" id="welcome-countdown" aria-live="polite">
+          <div class="countdown-card">
+            <strong id="countdown-days">00</strong>
+            <span>hari</span>
+          </div>
+          <div class="countdown-card">
+            <strong id="countdown-hours">00</strong>
+            <span>jam</span>
+          </div>
+          <div class="countdown-card">
+            <strong id="countdown-minutes">00</strong>
+            <span>menit</span>
+          </div>
+          <div class="countdown-card">
+            <strong id="countdown-seconds">00</strong>
+            <span>detik</span>
+          </div>
+        </div>
+        <div class="confirm-actions single-action">
+          <button id="welcome-close" class="submit-button" type="button">Tutup dan Lanjut</button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="confirm-dialog" aria-labelledby="confirm-title">
+      <div class="success-icon confirm-icon">!</div>
+      <h2 id="confirm-title">Konfirmasi pendaftaran</h2>
+      <p id="confirm-text">-</p>
+      <div class="confirm-actions">
+        <button id="confirm-cancel" class="outline-button" type="button">Batal</button>
+        <button id="confirm-continue" class="submit-button" type="button">Setuju & Lanjut</button>
+      </div>
+    </dialog>
+
+    <dialog id="success-dialog" aria-labelledby="success-title">
+      <div class="success-icon">✓</div>
+      <h2 id="success-title">Pendaftaran berhasil!</h2>
+      <p id="success-text">Data pendaftaranmu telah tersimpan. Terima kasih telah mendaftar TKA.</p>
+      <div class="confirm-actions single-action">
+        <button id="join-group-button" class="submit-button" type="button" hidden>Gabung Grup WhatsApp</button>
+        <button id="close-dialog" class="outline-button" type="button">Tutup</button>
+      </div>
+    </dialog>
+    <script src="script.js"></script>
+  </body>
+</html>
